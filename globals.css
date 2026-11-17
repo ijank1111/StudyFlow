@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 98%;
+    --foreground: 240 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    --primary: 250 85% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 190 90% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 10% 95%;
+    --muted-foreground: 240 5% 45%;
+
+    --accent: 250 85% 96%;
+    --accent-foreground: 250 85% 40%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 90%;
+    --input: 240 10% 90%;
+    --ring: 250 85% 60%;
+
+    --radius: 1.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: 
+      radial-gradient(circle at 0% 0%, hsla(250, 85%, 90%, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 100% 0%, hsla(190, 90%, 90%, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 50% 100%, hsla(320, 85%, 90%, 0.3) 0%, transparent 50%),
+      #f8f9ff;
+    background-attachment: fixed;
+  }
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+}
+
+.floating-nav {
+  @apply bg-white/80 backdrop-blur-lg border border-white/50 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)];
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-200 hover:shadow-indigo-300 transition-all active:scale-95;
+}
